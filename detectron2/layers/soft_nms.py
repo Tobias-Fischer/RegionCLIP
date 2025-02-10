@@ -226,7 +226,7 @@ def _soft_nms(
     """
     boxes = boxes.clone()
     scores = scores.clone()
-    idxs = torch.arange(scores.size()[0])
+    idxs = torch.arange(scores.size()[0]).to(scores.device)
 
     idxs_out = []
     scores_out = []
